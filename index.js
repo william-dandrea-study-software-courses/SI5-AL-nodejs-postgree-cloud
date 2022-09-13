@@ -4,8 +4,14 @@ const app = express();
 const port = 4958;
 
 app.get('/', function (req, res) {
-    res.sendFile('index.html', {root: __dirname});
-})
+    // res.sendFile('index.html', {root: __dirname});
+    res.send({'status': 0, 'response': 'It Works'})
+});
+
+app.get('/route', function (req, res) {
+    // res.sendFile('index.html', {root: __dirname});
+    res.send({'status': 0, 'response': 'Route Works'})
+});
 
 app.listen(port, () => {
     console.log(`Now listening on port ${port}`);
