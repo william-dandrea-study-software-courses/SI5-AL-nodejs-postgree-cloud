@@ -6,7 +6,7 @@ services:
     restart: always
     build: .
     ports:
-      - '4958:5000'
+      - ${PORT}:5000
     environment:
       - USER_DB="si5_sacc"
       - HOST_DB="database"
