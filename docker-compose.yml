@@ -13,6 +13,7 @@ services:
       - DATABASE_NAME="td_1"
       - PASSWORD_DB="dev_password"
       - PORT_DB=5432
+      - IS_DEPLOYED_ON_HEROKU=0
     depends_on:
       -   database
 
