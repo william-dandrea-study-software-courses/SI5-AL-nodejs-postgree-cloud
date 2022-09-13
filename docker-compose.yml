@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+  web:
+    container_name: web
+    restart: always
+    build: .
+    ports:
+      - '4958:4958'
+    depends_on:
+      -   database
+
+  database:
+    image: postgres:14
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_PASSWORD=dev_password
+      - POSTGRES_USER=si5_sacc
+      - POSTGRES_DB=td_1
+
+  # PostgreSQL pgAdmin panel accessible at http://localhost:16543/
+  pgadmin-compose:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "placeholder@example.com"
+      PGADMIN_DEFAULT_PASSWORD: "fakepassword123!"
+    ports:
+      - "16543:80"
+    depends_on:
+      -   database
