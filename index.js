@@ -1,22 +1,23 @@
 const express = require('express');
 const { Client } = require("pg");
 
+/*
 const client = new Client({
     connectionString: process.env.DATABASE_URL,
     ssl: {
         rejectUnauthorized: false
     }
-});
+}); */
 
-/*
+
 const client = new Client({
-        user: process.env.USER_DB,
-        host: process.env.HOST_DB,
-        database: process.env.DATABASE_NAME,
-        password: process.env.PASSWORD_DB,
-        port: process.env.PORT_DB
-    });
-}*/
+    user: process.env.USER_DB,
+    host: process.env.HOST_DB,
+    database: process.env.DATABASE_NAME,
+    password: process.env.PASSWORD_DB,
+    port: process.env.PORT_DB
+})
+
 
 
 
