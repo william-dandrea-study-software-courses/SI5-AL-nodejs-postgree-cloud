@@ -6,7 +6,13 @@ services:
     restart: always
     build: .
     ports:
-      - '4958:4958'
+      - '4958:5000'
+    environment:
+      - USER_DB="si5_sacc"
+      - DATABASE_URL="database"
+      - DATABASE_NAME="td_1"
+      - PASSWORD_DB="dev_password"
+      - PORT_DB="5432"
     depends_on:
       -   database
 
