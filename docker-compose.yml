@@ -12,7 +12,7 @@ services:
       - HOST_DB="database"
       - DATABASE_NAME="td_1"
       - PASSWORD_DB="dev_password"
-      - PORT_DB="5432"
+      - PORT_DB=5432
     depends_on:
       -   database
 

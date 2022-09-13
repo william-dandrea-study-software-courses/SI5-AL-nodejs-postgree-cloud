@@ -1,6 +1,7 @@
 const express = require('express');
 const { Client } = require("pg");
 
+/*
 const client = new Client({
     user: process.env.USER_DB,
     host: process.env.HOST_DB,
@@ -8,6 +9,14 @@ const client = new Client({
     password: process.env.PASSWORD_DB,
     port: process.env.PORT_DB
 });
+ */
+const client = new Client({
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+        rejectUnauthorized: false
+    }
+});
+
 
 // ORM
 const app = express();
